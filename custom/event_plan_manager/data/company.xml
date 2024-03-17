@@ -1,0 +1,28 @@
+<odoo>
+    <data>
+        <record id="partner_main" model="res.partner">
+            <field name="name">Harmony &amp; Elegant</field>
+            <field name="company_name">Harmony &amp; Elegant</field>
+            <field name="street">250 Executive Park Blvd, Suite 3400</field>
+            <field name="city">San Francisco</field>
+            <field name="zip">94134</field>
+            <field name="phone">+1 (650) 555-0111 </field>
+            <field name="email">info@yourcompany.example.com</field>
+            <field name="website">www.example.com</field>
+        </record>
+
+        <record id="company_main" model="res.company">
+            <field name="name">Harmony &amp; Elegant</field>
+            <field name="logo" type="base64" file="event_plan_manager/static/img/logo.jpg"/>
+            <field name="partner_id" ref="partner_main"/>
+            <field name="currency_id" ref="base.IDR"/>
+        </record>
+
+        <record id="base.main_company" model="res.company">
+            <field name="name">My Company</field>
+            <field name="partner_id" ref="base.main_partner"/>
+            <field name="currency_id" ref="base.USD"/>
+            <field name="logo" type="base64" file="event_plan_manager/static/img/logo.jpg"/>
+        </record>
+    </data>
+</odoo>
