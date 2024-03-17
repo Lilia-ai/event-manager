@@ -1,7 +1,7 @@
 {
     "name": "Event Manager",
     "version": "1.0.0",
-    'author': "Terabits Technolab",
+    'author': "New Programmer",
     'summary': """   Event Manager
     """,
     'description': """ 
