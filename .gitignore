@@ -49,3 +49,6 @@ package.json
 /man/
 /share/
 /src/
+/data/
+/data/filestore/
+/data/sessions/
