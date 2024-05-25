@@ -1,0 +1,63 @@
+<odoo>
+    <data>
+
+        <!-- Hide 'Discuss' menu -->
+        <record id="mail.menu_root_discuss" model="ir.ui.menu">
+            <field name="groups_id" eval="[(6, 0, [ref('event_plan_manager.group_event_planner_manager')])]"/>
+        </record>
+
+        <!-- Hide 'Sales' menu -->
+        <record id="sale.sale_menu_root" model="ir.ui.menu">
+            <field name="groups_id" eval="[(6, 0, [ref('event_plan_manager.group_event_planner_manager')])]"/>
+        </record>
+
+        <!-- Hide 'Invoicing' or 'Finance' menu -->
+        <record id="account.menu_finance" model="ir.ui.menu">
+            <field name="groups_id" eval="[(6, 0, [ref('event_plan_manager.group_event_planner_manager')])]"/>
+        </record>
+
+        <!-- Hide Main 'Odoo' menu -->
+        <record id="spreadsheet_dashboard.spreadsheet_dashboard_menu_root" model="ir.ui.menu">
+            <field name="groups_id" eval="[(6, 0, [ref('event_plan_manager.group_event_planner_manager')])]"/>
+        </record>
+
+        <!-- Hide 'Website' > 'Configuration' menu -->
+        <record id="website.menu_website_configuration" model="ir.ui.menu">
+            <field name="groups_id" eval="[(6, 0, [ref('event_plan_manager.group_event_planner_manager')])]"/>
+        </record>
+
+        <!-- Hide 'Events' menu -->
+        <record id="event.event_main_menu" model="ir.ui.menu">
+            <field name="groups_id" eval="[(6, 0, [ref('event_plan_manager.group_event_planner_manager'), ref('event_plan_manager.group_event_planner'), ref('event_plan_manager.group_event_clerk')])]"/>
+        </record>
+
+        <record id="event.menu_event_event" model="ir.ui.menu">
+            <field name="groups_id" eval="[(6, 0, [ref('event_plan_manager.group_event_planner_manager'), ref('event_plan_manager.group_event_planner'), ref('event_plan_manager.group_event_clerk')])]"/>
+        </record>
+
+        <record id="event.menu_reporting_events" model="ir.ui.menu">
+            <field name="groups_id" eval="[(6, 0, [ref('event_plan_manager.group_event_planner_manager'), ref('event_plan_manager.group_event_planner')])]"/>
+        </record>
+
+        <record id="event.menu_event_configuration" model="ir.ui.menu">
+            <field name="groups_id" eval="[(6, 0, [ref('event_plan_manager.group_event_planner_manager'), ref('event_plan_manager.group_event_planner')])]"/>
+        </record>
+
+        <!-- Hide 'Settings' > 'Technical' > 'Database Structure' or 'Management' menu -->
+        <record id="base.menu_management" model="ir.ui.menu">
+            <field name="groups_id" eval="[(6, 0, [ref('event_plan_manager.group_event_planner_manager')])]"/>
+        </record>
+
+        <record id="event.menu_event_registration_desk" model="ir.ui.menu">
+            <field name="groups_id" eval="[(6, 0, [ref('event_plan_manager.group_event_planner_manager'), ref('event_plan_manager.group_event_clerk'), ref('event_plan_manager.group_event_planner')])]"/>
+        </record>
+
+<!--        <menuitem id="menu_event_pages_events"-->
+<!--            parent="event.event_main_menu"-->
+<!--            sequence="40"-->
+<!--            name="Events Pages"-->
+<!--            action="website_event.action_event_pages_list"-->
+<!--            groups="event_plan_manager.group_event_planner_manager,event_plan_manager.group_event_planner"/>-->
+
+    </data>
+</odoo>
