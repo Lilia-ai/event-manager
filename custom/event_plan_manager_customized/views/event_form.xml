@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="event_form_address_domain" model="ir.ui.view">
+        <field name="name">event.event.view.form.inherit.address.domain</field>
+        <field name="model">event.event</field>
+        <field name="inherit_id" ref="event.view_event_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//group//field[@name='address_id']" position="attributes">
+                <attribute name="domain">[('is_venue', '=', True)]</attribute>
+            </xpath>
+            <xpath expr="//group//field[@name='lang']" position="attributes">
+                <attribute name="invisible">True</attribute>
+            </xpath>
+            <field name="stage_id" position="before">
+                <button string="Add Venue" type="action"
+                            name="%(action_wizard_add_venue)d" class="btn-primary"/>
+            </field>
+        </field>
+    </record>
+</odoo>

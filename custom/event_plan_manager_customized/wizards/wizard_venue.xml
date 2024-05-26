@@ -1,0 +1,44 @@
+<odoo>
+    <record id="view_wizard_add_venue_form" model="ir.ui.view">
+        <field name="name">wizard.add.venue.form</field>
+        <field name="model">wizard.add.venue</field>
+        <field name="arch" type="xml">
+            <form string="Add Venue">
+                <sheet>
+                    <group>
+                        <group>
+                            <group colspan="2">
+                                <h3><field name="name" placeholder="Venue Name" required="1" nolabel="1"/></h3>
+                            </group>
+                            <group>
+                                <label for="stree" colspan="2"/>
+                                <field name="stree" nolabel="1"/>
+                                <field name="stree2" nolabel="1"/>
+                            </group>
+                        </group>
+                        <group>
+                            <group>
+                                <field name="country_id" nolabel="1" placeholder="Country"/>
+                                <field name="state" nolabel="1" placeholder="State"/>
+                                <field name="city" nolabel="1" placeholder="City"/>
+                                <field name="zip" nolabel="1" placeholder="Zip Code"/>
+                            </group>
+                        </group>
+                    </group>
+                </sheet>
+                <footer>
+                    <button string="Confirm" type="object" class="btn-primary" name="action_confirm"/>
+                    <button string="Cancel" class="btn-secondary" special="cancel"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_wizard_add_venue" model="ir.actions.act_window">
+        <field name="name">Add Venue</field>
+        <field name="res_model">wizard.add.venue</field>
+        <field name="view_mode">form</field>
+        <field name="view_id" ref="view_wizard_add_venue_form"/>
+        <field name="target">new</field>
+    </record>
+</odoo>

@@ -11,9 +11,13 @@
     "license": "OPL-1",
     "category": "Management/Managing",
     "website": "https://www.verniy.xyz",
-    "depends": ["base", "clarity_backend_theme_bits", "event_plan_manager"],
+    "depends": ["contacts", "event_plan_manager", 'event'],
     "data": [
-        "views/menu_access.xml"
+        "wizards/wizard_venue.xml",
+        "security/ir.model.access.csv",
+        
+        "views/menu_access.xml",
+        "views/event_form.xml",
     ],
     'installable': True,
     'application': True,
