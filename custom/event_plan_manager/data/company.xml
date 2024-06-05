@@ -2,7 +2,6 @@
     <data>
         <record id="partner_main" model="res.partner">
             <field name="name">Harmony &amp; Elegant</field>
-            <field name="company_name">Harmony &amp; Elegant</field>
             <field name="street">250 Executive Park Blvd, Suite 3400</field>
             <field name="city">San Francisco</field>
             <field name="zip">94134</field>

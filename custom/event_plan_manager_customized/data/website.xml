@@ -1,0 +1,11 @@
+<odoo>
+    <data>
+        <record id="default_website_1" model="website">
+            <field name="name">Harmony &amp; Elegant</field>
+            <field name="company_id" ref="base.main_company"/>
+            <field name="user_id" ref="base.public_user"/>
+            <field name="sequence" eval="1"/>
+            <field name="logo" type="base64" file="event_plan_manager/static/img/logo.jpg"/>
+        </record>
+    </data>
+</odoo>

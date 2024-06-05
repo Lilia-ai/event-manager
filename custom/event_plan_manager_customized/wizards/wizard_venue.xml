@@ -6,23 +6,17 @@
             <form string="Add Venue">
                 <sheet>
                     <group>
+                        <h3 colspan="2"><field name="name" placeholder="Venue Name" required="1" nolabel="1"/></h3>
+                        <label for="stree" colspan="2" string="Address"/>
+                        <field name="stree" nolabel="1" placeholder="Street Name" colspan="2" required="1"/>
+                        <field name="stree2" nolabel="1" placeholder="Street Name 2" colspan="2"/>
                         <group>
-                            <group colspan="2">
-                                <h3><field name="name" placeholder="Venue Name" required="1" nolabel="1"/></h3>
-                            </group>
-                            <group>
-                                <label for="stree" colspan="2"/>
-                                <field name="stree" nolabel="1"/>
-                                <field name="stree2" nolabel="1"/>
-                            </group>
+                            <field name="country_id" placeholder="Country" nolabel="1" colspan="2" required="1"/>
+                            <field name="state" placeholder="State" nolabel="1" colspan="2" required="1"/>
                         </group>
                         <group>
-                            <group>
-                                <field name="country_id" nolabel="1" placeholder="Country"/>
-                                <field name="state" nolabel="1" placeholder="State"/>
-                                <field name="city" nolabel="1" placeholder="City"/>
-                                <field name="zip" nolabel="1" placeholder="Zip Code"/>
-                            </group>
+                            <field name="city" placeholder="City" nolabel="1" colspan="2" required="1"/>
+                            <field name="zip" placeholder="Zip Code" nolabel="1" colspan="2" required="1"/>
                         </group>
                     </group>
                 </sheet>

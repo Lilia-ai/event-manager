@@ -12,4 +12,14 @@ class AddVenue(models.TransientModel):
     country_id = fields.Many2one('res.country', "Country")
 
     def action_confirm(self):
-        print("test")
+        dict2create = {
+            'name': self.name,
+            'street': self.stree,
+            'street2': self.stree2,
+            'city': self.city,
+            'state_id': self.state.id,
+            'zip': self.zip,
+            'country_id': self.country_id.id,
+            'is_venue': True
+        }
+        return self.env['res.partner'].sudo().create(dict2create)
