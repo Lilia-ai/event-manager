@@ -15,6 +15,21 @@
                 <button string="Add Venue" type="action"
                             name="%(action_wizard_add_venue)d" class="btn-primary"/>
             </field>
+            <field name="organizer_id" position="attributes">
+                <attribute name="invisible">True</attribute>
+            </field>
+        </field>
+    </record>
+
+    <record id="event_event_view_form_hide" model="ir.ui.view">
+        <field name="name">event.event.view.from.inherit.track</field>
+        <field name="inherit_id" ref="website_event.event_event_view_form"/>
+        <field name="model">event.event</field>
+        <field name="priority" eval="3"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='website_id'][2]" position="attributes">
+                <attribute name="invisible">True</attribute>
+            </xpath>
         </field>
     </record>
 </odoo>
