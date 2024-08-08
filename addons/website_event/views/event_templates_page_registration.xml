@@ -227,10 +227,15 @@
 <template id="registration_event_question" name="Registration Event Question">
     <label t-out="question.title"/>
     <span t-if="question.is_mandatory_answer">*</span>
-    <t t-if="question.question_type in ['name', 'email', 'phone', 'company_name']">
+    <t t-if="question.question_type in ['email']">
         <input class="form-control" t-att-type="input_type_by_question_type[question.question_type]"
                t-attf-name="#{registration_index}-#{question.question_type}-#{question.id}"
                t-att-required="question.is_mandatory_answer" t-att-value="default_first_attendee.get(question.question_type, '') if counter in (0,1) else ''"/>
+    </t>
+    <t t-elif="question.question_type in ['name', 'phone', 'company_name']">
+        <input class="form-control" t-att-type="input_type_by_question_type[question.question_type]"
+               t-attf-name="#{registration_index}-#{question.question_type}-#{question.id}"
+               t-att-required="question.is_mandatory_answer" t-att-value="default_first_attendee.get(question.question_type, '') if counter in (0,1) else ''" maxlength="13"/>
     </t>
     <t t-elif="question.question_type == 'simple_choice'">
         <select t-attf-name="#{registration_index}-#{question.question_type}-#{question.id}"
@@ -456,7 +461,7 @@
                                             <t t-foreach="range(0, seats_max)" t-as="nb">
                                                 <option t-out="nb" t-att-selected="nb == 1 and 'selected'"/>
                                             </t>
-                                        </select>
+                                        </select>/<span t-if="tickets" t-esc="tickets.seats_max - tickets.seats_taken"/>
                                     </div>
                                 </t>
                                 <t t-else="">
